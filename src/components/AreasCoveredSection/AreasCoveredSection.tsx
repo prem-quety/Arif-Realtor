@@ -1,44 +1,300 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+
 export default function AreasCoveredSection() {
+  const prefersReduce = useReducedMotion();
+  const [selected, setSelected] = useState(null);
+
   const areas = [
-    { name: "Mississauga", image: "/images/areas/mississauga.jpg" },
-    { name: "Oakville", image: "/images/areas/oakville.jpg" },
-    { name: "Milton", image: "/images/areas/milton.jpg" },
-    { name: "Waterloo", image: "/images/areas/waterloo.jpg" },
-    { name: "Ajax", image: "/images/areas/ajax.jpg" },
-    { name: "Toronto", image: "/images/areas/toronto.jpg" },
-    { name: "Oshawa", image: "/images/areas/oshawa.jpg" },
-    { name: "Niagara Falls", image: "/images/areas/niagara.jpg" },
-    { name: "Pickering", image: "/images/areas/pickering.jpg" },
+    {
+      name: "Mississauga",
+      image: "/assets/images/mississauga.jpg",
+      blurb: "Lakeside living, vibrant squares, and calm suburban pockets.",
+    },
+    {
+      name: "Oakville",
+      image: "/assets/images/oakville.jpg",
+      blurb: "Tree‑lined streets, harbours, and stately neighbourhoods.",
+    },
+    {
+      name: "Milton",
+      image: "/assets/images/milton.jpg",
+      blurb: "Family‑first communities with quick access to escarpment trails.",
+    },
+    {
+      name: "Waterloo",
+      image: "/assets/images/waterloo.webp",
+      blurb: "Campus energy meets refined residential streets and tech hubs.",
+    },
+    {
+      name: "Ajax",
+      image: "/assets/images/ajax.jpg",
+      blurb: "Quiet waterfronts, parks, and easy commuter links.",
+    },
+    {
+      name: "Toronto",
+      image: "/assets/images/toronto.webp",
+      blurb:
+        "Iconic skyline, distinct neighbourhoods, culture on every corner.",
+    },
+    {
+      name: "Oshawa",
+      image: "/assets/images/oshawa.webp",
+      blurb: "Historic cores balanced with new, modern communities.",
+    },
+    {
+      name: "Niagara Falls",
+      image: "/assets/images/niagara.jpg",
+      blurb: "Wine country charm and scenic riverside living.",
+    },
+    {
+      name: "Pickering",
+      image: "/assets/images/pickering.jpg",
+      blurb: "Waterfront boardwalks and calm, well‑kept streets.",
+    },
   ];
 
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: prefersReduce ? 0 : 0.06,
+        delayChildren: prefersReduce ? 0 : 0.06,
+      },
+    },
+  };
+
+  const card = {
+    hidden: { opacity: 0, y: prefersReduce ? 0 : 12 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    hover: prefersReduce ? {} : { scale: 1.01, transition: { duration: 0.25 } },
+    tap: prefersReduce ? {} : { scale: 0.995, transition: { duration: 0.1 } },
+  };
+
+  const slug = (s) =>
+    s
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)+/g, "");
+
   return (
-    <section className="bg-white">
-      <div className="text-center py-16">
-        <p className="text-accent text-sm font-semibold uppercase tracking-wide">
-          Apart from Mississauga Homes for Sale
-        </p>
-        <h2 className="mt-2 text-4xl font-serif font-medium text-heading">
-          Areas We Covered
-        </h2>
+    <section className="relative bg-white">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-[-10rem] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(212,175,55,0.12),transparent)]" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0">
-        {areas.map((area) => (
-          <div key={area.name} className="relative aspect-[4/3]">
-            <img
-              src={area.image}
-              alt={area.name}
-              className="absolute inset-0 w-full h-full object-cover"
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav
+          aria-label="Breadcrumb"
+          className="flex items-center justify-center gap-2 pt-10 text-sm text-neutral-500"
+        >
+          <Link href="/" className="hover:text-neutral-900">
+            Home
+          </Link>
+          <span className="text-neutral-300">/</span>
+          <span className="text-neutral-900">GTA & Beyond</span>
+        </nav>
+
+        <motion.header
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.4 }}
+          className="py-10 text-center"
+        >
+          <h2 className="font-serif text-5xl sm:text-6xl font-semibold tracking-tight text-neutral-900">
+            <span className="bg-gradient-to-r from-[#c5a24f] via-[#d4af37] to-[#c5a24f] bg-clip-text text-transparent">
+              Areas We Cover
+            </span>
+          </h2>
+          <div className="mx-auto mt-6 h-px w-28 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
+          <p className="mx-auto mt-4 max-w-xl text-neutral-600">
+            Minimal, high‑end browsing for serious buyers. Tap a card to open a
+            clean, focused overview.
+          </p>
+        </motion.header>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 gap-5 pb-20 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {areas.map((area) => (
+            <AreaCard
+              key={area.name}
+              area={area}
+              onOpen={() => setSelected(area)}
             />
-            <div className="absolute inset-0 bg-black/20" />
-            <h3 className="absolute inset-0 flex items-center justify-center text-white text-2xl font-serif font-medium">
-              {area.name}
-            </h3>
-          </div>
-        ))}
+          ))}
+        </motion.div>
       </div>
+
+      <LocationModal
+        area={selected}
+        onClose={() => setSelected(null)}
+        slug={slug}
+      />
     </section>
+  );
+}
+
+function AreaCard({ area, onOpen }) {
+  const { name, image } = area;
+  return (
+    <motion.button
+      type="button"
+      onClick={onOpen}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.995 }}
+      className="group relative block w-full overflow-hidden rounded-2xl border border-neutral-200/70 bg-white text-left transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] hover:shadow-[0_6px_24px_rgba(0,0,0,0.06)]"
+    >
+      <div className="relative aspect-[4/3]">
+        <Image
+          src={image}
+          alt={`${name} homes & neighbourhoods`}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          priority={false}
+        />
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-x-0 bottom-0 p-5">
+          <div className="flex items-end justify-between">
+            <h3 className="font-serif text-3xl font-semibold text-white drop-shadow-sm">
+              {name}
+            </h3>
+            <Chevron className="opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+          </div>
+          <div className="mt-3 h-px w-14 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
+        </div>
+      </div>
+      <div className="flex items-center justify-end border-t border-neutral-200/70 bg-white px-5 py-3 text-sm text-neutral-700">
+        <span className="text-neutral-500 group-hover:text-neutral-800">
+          View
+        </span>
+      </div>
+    </motion.button>
+  );
+}
+
+function LocationModal({ area, onClose, slug }) {
+  const closeRef = useRef(null);
+
+  useEffect(() => {
+    if (!area) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const t = setTimeout(() => closeRef.current?.focus(), 10);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      clearTimeout(t);
+    };
+  }, [area, onClose]);
+
+  return (
+    <AnimatePresence>
+      {area && (
+        <motion.div
+          key="modal"
+          aria-modal="true"
+          role="dialog"
+          aria-labelledby="location-title"
+          className="fixed inset-0 z-50"
+          initial={false}
+        >
+          <motion.div
+            className="absolute inset-0 backdrop-blur-sm bg-black/40"
+            onClick={onClose}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
+
+          <motion.div
+            className="relative mx-auto mt-20 w-[92%] max-w-3xl overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-2xl"
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: { duration: 0.25, ease: "easeOut" },
+            }}
+            exit={{
+              opacity: 0,
+              y: 10,
+              scale: 0.99,
+              transition: { duration: 0.2 },
+            }}
+          >
+            <div className="relative h-52 sm:h-64">
+              <Image
+                src={area.image}
+                alt="Location banner"
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <h3
+                id="location-title"
+                className="absolute bottom-4 left-5 font-serif text-3xl font-semibold text-white drop-shadow-sm"
+              >
+                {area.name}
+              </h3>
+            </div>
+
+            <div className="p-6 sm:p-8">
+              <p className="max-w-2xl text-neutral-700">{area.blurb}</p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-[#d4af37] bg-[#d4af37] px-4 py-2 text-sm font-medium text-white shadow transition hover:bg-[#b9934a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
+                >
+                  Contact Us for More Info
+                </Link>
+                <button
+                  ref={closeRef}
+                  onClick={onClose}
+                  className="inline-flex items-center justify-center rounded-full border border-transparent bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+function Chevron(props) {
+  return (
+    <svg
+      {...props}
+      className={`h-5 w-5 text-white ${props.className ?? ""}`}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M9 5l7 7-7 7"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
