@@ -3,6 +3,7 @@ import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import MortgageHero from "../Hero/page";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 /**
@@ -150,338 +151,351 @@ export default function PremiumMortgageCalculator() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-onyx to-onyx/95 text-ivory">
-      <div className="mx-auto max-w-7xl px-4 py-10 lg:py-14">
-        <motion.header
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mb-6"
-        >
-          <h1 className="font-serif text-4xl md:text-5xl tracking-tight">
-            Mortgage Calculator
-          </h1>
-          <p className="mt-2 text-ivory/70">
-            Premium UI, reference features, instant updates.
-          </p>
-        </motion.header>
+    <>
+      <MortgageHero
+        title="Mortgage Calculator"
+        subtitle="Estimate payments with local taxes, PMI scenarios, and amortization options for Mississauga & GTA."
+        imageSrc="/assets/images/mortgage-hero.jpg"
+      />
+      <div
+        className="min-h-screen bg-gradient-to-b from-onyx to-onyx/95 text-ivory"
+        id="calculator"
+      >
+        <div className="mx-auto max-w-7xl px-4 py-10 lg:py-14">
+          <motion.header
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="mb-6"
+          >
+            <h1 className="font-serif text-4xl md:text-5xl tracking-tight">
+              Mortgage Calculator
+            </h1>
+            <p className="mt-2 text-ivory/70">
+              Premium UI, reference features, instant updates.
+            </p>
+          </motion.header>
 
-        <motion.section
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.05 }}
-          className="grid lg:grid-cols-2 gap-6"
-        >
-          {/* Left — Inputs */}
-          <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
-            <h2 className="font-serif text-2xl mb-4">Loan Inputs</h2>
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Field
-                label="Home Value"
-                value={homeValue}
-                onChange={setHomeValue}
-                prefix="$"
-                min={0}
-              />
-              <Field
-                label="Down Payment"
-                value={downPayment}
-                onChange={setDownPayment}
-                prefix="$"
-                min={0}
-              />
-              <Field
-                label="Loan Amount"
-                value={loanAmount}
-                readOnly
-                prefix="$"
-              />
-              <Field
-                label="Interest Rate"
-                value={interestRate}
-                onChange={setInterestRate}
-                suffix="%"
-                step={0.01}
-                min={0}
-              />
-              <Field
-                label="Loan Term"
-                value={loanTerm}
-                onChange={setLoanTerm}
-                suffix="years"
-                min={1}
-              />
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-ivory/80">
-                  Start Date
-                </span>
-                <div className="mt-2 grid grid-cols-2 gap-2">
-                  <select
-                    className="select"
-                    value={startMonth}
-                    onChange={(e) => setStartMonth(Number(e.target.value))}
-                  >
-                    {months.map((m, i) => (
-                      <option key={m} value={i}>
-                        {m}
-                      </option>
-                    ))}
-                  </select>
-                  <input
-                    className="input"
-                    type="number"
-                    value={startYear}
-                    onChange={(e) => setStartYear(Number(e.target.value))}
+          <motion.section
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.05 }}
+            className="grid lg:grid-cols-2 gap-6"
+          >
+            {/* Left — Inputs */}
+            <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
+              <h2 className="font-serif text-2xl mb-4">Loan Inputs</h2>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <Field
+                  label="Home Value"
+                  value={homeValue}
+                  onChange={setHomeValue}
+                  prefix="$"
+                  min={0}
+                />
+                <Field
+                  label="Down Payment"
+                  value={downPayment}
+                  onChange={setDownPayment}
+                  prefix="$"
+                  min={0}
+                />
+                <Field
+                  label="Loan Amount"
+                  value={loanAmount}
+                  readOnly
+                  prefix="$"
+                />
+                <Field
+                  label="Interest Rate"
+                  value={interestRate}
+                  onChange={setInterestRate}
+                  suffix="%"
+                  step={0.01}
+                  min={0}
+                />
+                <Field
+                  label="Loan Term"
+                  value={loanTerm}
+                  onChange={setLoanTerm}
+                  suffix="years"
+                  min={1}
+                />
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-ivory/80">
+                    Start Date
+                  </span>
+                  <div className="mt-2 grid grid-cols-2 gap-2">
+                    <select
+                      className="select"
+                      value={startMonth}
+                      onChange={(e) => setStartMonth(Number(e.target.value))}
+                    >
+                      {months.map((m, i) => (
+                        <option key={m} value={i}>
+                          {m}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      className="input"
+                      type="number"
+                      value={startYear}
+                      onChange={(e) => setStartYear(Number(e.target.value))}
+                    />
+                  </div>
+                </div>
+                <Field
+                  label="Property Tax"
+                  value={propertyTaxAnnual}
+                  onChange={setPropertyTaxAnnual}
+                  prefix="$"
+                  suffix="/year"
+                  min={0}
+                />
+                <Field
+                  label="PMI"
+                  value={pmiRate}
+                  onChange={setPmiRate}
+                  suffix="%"
+                  step={0.01}
+                  min={0}
+                />
+                <Field
+                  label="Home Insurance"
+                  value={homeInsuranceAnnual}
+                  onChange={setHomeInsuranceAnnual}
+                  prefix="$"
+                  suffix="/year"
+                  min={0}
+                />
+                <Field
+                  label="Monthly HOA"
+                  value={hoaMonthly}
+                  onChange={setHoaMonthly}
+                  prefix="$"
+                  min={0}
+                />
+              </div>
+
+              {/* Sliders (reference vibe) */}
+              <div className="mt-6 grid gap-5">
+                <Slider
+                  label="Down Payment"
+                  value={downPayment}
+                  onChange={setDownPayment}
+                  max={homeValue}
+                />
+                <Slider
+                  label="Interest Rate (%)"
+                  value={interestRate}
+                  onChange={setInterestRate}
+                  step={0.01}
+                  max={15}
+                />
+                <Slider
+                  label="PMI (%)"
+                  value={pmiRate}
+                  onChange={setPmiRate}
+                  step={0.01}
+                  max={5}
+                />
+              </div>
+            </div>
+
+            {/* Right — Summary & Chart */}
+            <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
+              <div className="flex items-baseline justify-between">
+                <div>
+                  <div className="text-ivory/70 text-sm">
+                    Your estimated monthly payment with PMI
+                  </div>
+                  <div className="font-serif text-5xl text-accent">
+                    ${currency(core.monthlyPayment)}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-5 grid md:grid-cols-2 gap-6">
+                <div className="space-y-2 text-sm">
+                  <Detail label="PMI" value={`$${currency(core.pmi)}`} />
+                  <Detail
+                    label="Monthly Tax Paid"
+                    value={`$${currency(propertyTaxAnnual / 12)}`}
+                  />
+                  <Detail
+                    label="Monthly Home Insurance"
+                    value={`$${currency(homeInsuranceAnnual / 12)}`}
+                  />
+                  <div className="h-px bg-ivory/10 my-3" />
+                  <Detail label="PMI End Date" value={fmtDate(pmiInfo.date)} />
+                  <Detail
+                    label="Total PMI Payments"
+                    value={String(pmiInfo.monthIndex)}
+                  />
+                  <Detail
+                    label="Monthly Payment after PMI"
+                    value={`$${currency(pmiInfo.monthlyAfterPMI)}`}
+                    emphasise
                   />
                 </div>
-              </div>
-              <Field
-                label="Property Tax"
-                value={propertyTaxAnnual}
-                onChange={setPropertyTaxAnnual}
-                prefix="$"
-                suffix="/year"
-                min={0}
-              />
-              <Field
-                label="PMI"
-                value={pmiRate}
-                onChange={setPmiRate}
-                suffix="%"
-                step={0.01}
-                min={0}
-              />
-              <Field
-                label="Home Insurance"
-                value={homeInsuranceAnnual}
-                onChange={setHomeInsuranceAnnual}
-                prefix="$"
-                suffix="/year"
-                min={0}
-              />
-              <Field
-                label="Monthly HOA"
-                value={hoaMonthly}
-                onChange={setHoaMonthly}
-                prefix="$"
-                min={0}
-              />
-            </div>
-
-            {/* Sliders (reference vibe) */}
-            <div className="mt-6 grid gap-5">
-              <Slider
-                label="Down Payment"
-                value={downPayment}
-                onChange={setDownPayment}
-                max={homeValue}
-              />
-              <Slider
-                label="Interest Rate (%)"
-                value={interestRate}
-                onChange={setInterestRate}
-                step={0.01}
-                max={15}
-              />
-              <Slider
-                label="PMI (%)"
-                value={pmiRate}
-                onChange={setPmiRate}
-                step={0.01}
-                max={5}
-              />
-            </div>
-          </div>
-
-          {/* Right — Summary & Chart */}
-          <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
-            <div className="flex items-baseline justify-between">
-              <div>
-                <div className="text-ivory/70 text-sm">
-                  Your estimated monthly payment with PMI
+                <div>
+                  <BreakdownChart result={core} />
                 </div>
-                <div className="font-serif text-5xl text-accent">
-                  ${currency(core.monthlyPayment)}
+              </div>
+
+              <div className="mt-6 flex justify-end">
+                <AmortizationTable schedule={core.amortizationSchedule} />
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Bottom cards */}
+          <div className="mt-6 grid lg:grid-cols-2 gap-6">
+            <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
+              <CardTitle icon="🏠" title="Mortgage Details" />
+              <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                <Detail
+                  label="Loan Amount"
+                  value={`$${currency(loanAmount)}`}
+                />
+                <Detail
+                  label="Down Payment"
+                  value={`$${currency(downPayment)} (${(
+                    downPayment / homeValue || 0 * 100
+                  ).toFixed(2)}%)`}
+                />
+                <Detail
+                  label="Total Interest Paid"
+                  value={`$${currency(core.totalInterest)}`}
+                />
+                <Detail
+                  label={`Total PMI to ${months[pmiInfo.date.getMonth()].slice(
+                    0,
+                    3
+                  )}. ${pmiInfo.date.getFullYear()}`}
+                  value={`$${currency(pmiInfo.totalPMIUntil)}`}
+                />
+
+                <Detail
+                  label="Total Tax Paid"
+                  value={`$${currency(propertyTaxAnnual * loanTerm)}`}
+                />
+                <Detail
+                  label="Total Home Insurance"
+                  value={`$${currency(homeInsuranceAnnual * loanTerm)}`}
+                />
+              </div>
+              <div className="mt-4 text-sm text-ivory/80">
+                <div>
+                  Total of {loanTerm * 12} Payments:{" "}
+                  <span className="font-semibold">
+                    ${currency(core.totalPayment)}
+                  </span>
+                </div>
+                <div>
+                  Loan pay‑off date:{" "}
+                  <span className="font-semibold">
+                    {fmtDate(monthlyPayoffDate)}
+                  </span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-5 grid md:grid-cols-2 gap-6">
-              <div className="space-y-2 text-sm">
-                <Detail label="PMI" value={`$${currency(core.pmi)}`} />
-                <Detail
-                  label="Monthly Tax Paid"
-                  value={`$${currency(propertyTaxAnnual / 12)}`}
+            <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
+              <CardTitle icon="⚖️" title="Monthly Vs Bi‑Weekly Payment" />
+              <div className="grid grid-cols-2 gap-4">
+                <MiniStat
+                  label="Monthly Payment"
+                  value={`$${currency(core.monthlyPayment)}`}
                 />
-                <Detail
-                  label="Monthly Home Insurance"
-                  value={`$${currency(homeInsuranceAnnual / 12)}`}
+                <MiniStat
+                  label="Bi‑weekly Payment"
+                  value={`$${currency(biWeekly.paymentDisplay)}`}
                 />
-                <div className="h-px bg-ivory/10 my-3" />
-                <Detail label="PMI End Date" value={fmtDate(pmiInfo.date)} />
-                <Detail
-                  label="Total PMI Payments"
-                  value={String(pmiInfo.monthIndex)}
+                <MiniStat
+                  label="Monthly Pay‑off Date"
+                  value={fmtDate(monthlyPayoffDate)}
+                  subtle
                 />
-                <Detail
-                  label="Monthly Payment after PMI"
-                  value={`$${currency(pmiInfo.monthlyAfterPMI)}`}
-                  emphasise
+                <MiniStat
+                  label="Bi‑weekly Pay‑off Date"
+                  value={fmtDate(biWeekly.payoffDate)}
+                  subtle
+                />
+                <MiniStat
+                  label="Total Interest Paid (Monthly)"
+                  value={`$${currency(core.totalInterest)}`}
+                  subtle
+                />
+                <MiniStat
+                  label="Total Interest Paid (Bi‑weekly)"
+                  value={`$${currency(biWeekly.totalInterest)}`}
+                  subtle
                 />
               </div>
-              <div>
-                <BreakdownChart result={core} />
-              </div>
-            </div>
-
-            <div className="mt-6 flex justify-end">
-              <AmortizationTable schedule={core.amortizationSchedule} />
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Bottom cards */}
-        <div className="mt-6 grid lg:grid-cols-2 gap-6">
-          <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
-            <CardTitle icon="🏠" title="Mortgage Details" />
-            <div className="grid sm:grid-cols-2 gap-3 text-sm">
-              <Detail label="Loan Amount" value={`$${currency(loanAmount)}`} />
-              <Detail
-                label="Down Payment"
-                value={`$${currency(downPayment)} (${(
-                  downPayment / homeValue || 0 * 100
-                ).toFixed(2)}%)`}
-              />
-              <Detail
-                label="Total Interest Paid"
-                value={`$${currency(core.totalInterest)}`}
-              />
-              <Detail
-                label={`Total PMI to ${months[pmiInfo.date.getMonth()].slice(
-                  0,
-                  3
-                )}. ${pmiInfo.date.getFullYear()}`}
-                value={`$${currency(pmiInfo.totalPMIUntil)}`}
-              />
-
-              <Detail
-                label="Total Tax Paid"
-                value={`$${currency(propertyTaxAnnual * loanTerm)}`}
-              />
-              <Detail
-                label="Total Home Insurance"
-                value={`$${currency(homeInsuranceAnnual * loanTerm)}`}
-              />
-            </div>
-            <div className="mt-4 text-sm text-ivory/80">
-              <div>
-                Total of {loanTerm * 12} Payments:{" "}
-                <span className="font-semibold">
-                  ${currency(core.totalPayment)}
+              <div className="mt-4 text-center text-sm text-ivory/70">
+                Total Interest Savings:{" "}
+                <span className="font-semibold text-ivory">
+                  $
+                  {currency(
+                    Math.max(0, core.totalInterest - biWeekly.totalInterest)
+                  )}
                 </span>
               </div>
-              <div>
-                Loan pay‑off date:{" "}
-                <span className="font-semibold">
-                  {fmtDate(monthlyPayoffDate)}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl bg-card/80 backdrop-blur-xl border border-ivory/10 shadow-2xl p-6 md:p-8">
-            <CardTitle icon="⚖️" title="Monthly Vs Bi‑Weekly Payment" />
-            <div className="grid grid-cols-2 gap-4">
-              <MiniStat
-                label="Monthly Payment"
-                value={`$${currency(core.monthlyPayment)}`}
-              />
-              <MiniStat
-                label="Bi‑weekly Payment"
-                value={`$${currency(biWeekly.paymentDisplay)}`}
-              />
-              <MiniStat
-                label="Monthly Pay‑off Date"
-                value={fmtDate(monthlyPayoffDate)}
-                subtle
-              />
-              <MiniStat
-                label="Bi‑weekly Pay‑off Date"
-                value={fmtDate(biWeekly.payoffDate)}
-                subtle
-              />
-              <MiniStat
-                label="Total Interest Paid (Monthly)"
-                value={`$${currency(core.totalInterest)}`}
-                subtle
-              />
-              <MiniStat
-                label="Total Interest Paid (Bi‑weekly)"
-                value={`$${currency(biWeekly.totalInterest)}`}
-                subtle
-              />
-            </div>
-            <div className="mt-4 text-center text-sm text-ivory/70">
-              Total Interest Savings:{" "}
-              <span className="font-semibold text-ivory">
-                $
-                {currency(
-                  Math.max(0, core.totalInterest - biWeekly.totalInterest)
-                )}
-              </span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Theme tokens */}
-      <style jsx global>{`
-        :root {
-          --accent: #d4af37;
-          --onyx: #0b0b0c;
-          --ivory: #f8f7f4;
-          --card: rgba(255, 255, 255, 0.04);
-        }
-        .bg-card {
-          background: var(--card);
-        }
-        .text-accent {
-          color: var(--accent);
-        }
-        .bg-accent {
-          background: var(--accent);
-        }
-        .border-accent {
-          border-color: var(--accent);
-        }
-        .input {
-          @apply mt-2 w-full rounded-xl bg-ivory/80 text-onyx/90 border border-onyx/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent;
-        }
-        .select {
-          @apply mt-2 w-full rounded-xl bg-ivory/80 text-onyx/90 border border-onyx/10 px-3 py-3 outline-none focus:ring-2 focus:ring-accent;
-        }
-        .range {
-          @apply w-full accent-[var(--accent)];
-        }
-        .font-serif {
-          font-family: "Playfair Display", ui-serif, Georgia, Cambria,
-            "Times New Roman", Times, serif;
-        }
-        body {
-          font-family: Inter, ui-sans-serif, system-ui;
-        }
-      `}</style>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="anonymous"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-      />
-    </div>
+        {/* Theme tokens */}
+        <style jsx global>{`
+          :root {
+            --accent: #d4af37;
+            --onyx: #0b0b0c;
+            --ivory: #f8f7f4;
+            --card: rgba(255, 255, 255, 0.04);
+          }
+          .bg-card {
+            background: var(--card);
+          }
+          .text-accent {
+            color: var(--accent);
+          }
+          .bg-accent {
+            background: var(--accent);
+          }
+          .border-accent {
+            border-color: var(--accent);
+          }
+          .input {
+            @apply mt-2 w-full rounded-xl bg-ivory/80 text-onyx/90 border border-onyx/10 px-4 py-3 outline-none focus:ring-2 focus:ring-accent;
+          }
+          .select {
+            @apply mt-2 w-full rounded-xl bg-ivory/80 text-onyx/90 border border-onyx/10 px-3 py-3 outline-none focus:ring-2 focus:ring-accent;
+          }
+          .range {
+            @apply w-full accent-[var(--accent)];
+          }
+          .font-serif {
+            font-family: "Playfair Display", ui-serif, Georgia, Cambria,
+              "Times New Roman", Times, serif;
+          }
+          body {
+            font-family: Inter, ui-sans-serif, system-ui;
+          }
+        `}</style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet"
+        />
+      </div>
+    </>
   );
 }
 

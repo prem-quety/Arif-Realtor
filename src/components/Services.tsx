@@ -99,7 +99,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-              className="group relative w-full overflow-hidden rounded-3xl border border-neutral-100 bg-white/95 p-12 text-left shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
+              className="group relative w-full max-w-[28rem] mx-auto overflow-hidden rounded-3xl border border-neutral-100 bg-white/95 p-12 text-left shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-md transition-all hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
             >
               {/* Gold gradient bar */}
               <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#d4af37] to-[#c5a24f]" />

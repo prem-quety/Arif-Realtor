@@ -1,5 +1,15 @@
 "use client";
 
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer className="bg-background border-t border-gray-200 text-muted text-sm">
@@ -8,7 +18,7 @@ export default function Footer() {
         <div>
           <img
             src="/assets/images/arif.webp"
-            alt="Logo"
+            alt="Arif Realtor Logo"
             className="h-10 mb-4"
           />
           <p className="text-heading font-serif text-xl mb-2">
@@ -39,27 +49,27 @@ export default function Footer() {
           <p className="text-heading font-medium mb-4">Navigation</p>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-heading">
+              <a href="/" className="hover:text-heading">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-heading">
+              <a href="/buyers" className="hover:text-heading">
                 Buyers
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-heading">
+              <a href="/sellers" className="hover:text-heading">
                 Sellers
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-heading">
+              <a href="/about" className="hover:text-heading">
                 About
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-heading">
+              <a href="/contact" className="hover:text-heading">
                 Contact
               </a>
             </li>
@@ -86,19 +96,62 @@ export default function Footer() {
         <div>
           <p className="text-heading font-medium mb-4">Contact</p>
           <ul className="space-y-2 text-sm">
-            <li>📞 416-908-5600</li>
-            <li>📧 info@arifrealty.com</li>
-            <li>
-              📍 Burnhamthorpe Rd W,
-              <br />
-              Mississauga, ON L5C 4E9
+            <li className="flex items-center gap-2">
+              <Phone size={16} /> (647) 916-1000
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={16} /> (905) 997-3632
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={16} /> arif.realtor1@gmail.com
+            </li>
+            <li className="flex items-start gap-2">
+              <MapPin size={16} /> 885 Plymouth Dr Unit 2,
+              <br /> Mississauga, ON. L5V 0B5
             </li>
           </ul>
+
+          {/* Socials */}
+          <div className="flex gap-4 mt-6">
+            <a
+              href="https://www.facebook.com/ArifRajer.RealEstate"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#1877F2] transition"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/aarajer/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#E4405F] transition"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/arifrajer/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#0077B5] transition"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://wa.me/16479161000"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#25D366] transition"
+            >
+              <FaWhatsapp size={20} />
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-gray-200 text-center text-xs py-6 text-muted">
-        © {new Date().getFullYear()} Arif Realty — All rights reserved.
+        © {new Date().getFullYear()} Arif Rajer — Cityscape Real Estate Ltd.,
+        Brokerage. All rights reserved.
       </div>
     </footer>
   );

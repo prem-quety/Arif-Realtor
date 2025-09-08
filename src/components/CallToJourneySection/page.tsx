@@ -23,7 +23,7 @@ export default function CallToJourneySection() {
         <div className="rounded-2xl overflow-hidden border border-white/30 bg-white/60 backdrop-blur-md shadow-lg">
           <div className="relative">
             <img
-              src="/assets/images/webde.jpg"
+              src="/assets/images/depositphotos_366578560-stock-photo-suburban-two-story-house-premium.jpg"
               alt="Buying Home"
               className="w-full h-64 object-cover"
             />
@@ -57,7 +57,7 @@ export default function CallToJourneySection() {
         <div className="rounded-2xl overflow-hidden border border-white/30 bg-white/60 backdrop-blur-md shadow-lg">
           <div className="relative">
             <img
-              src="/assets/images/selling-home.webp"
+              src="/assets/images/depositphotos_540468498-stock-photo-cottage-style-house-street-residential.jpg"
               alt="Selling Home"
               className="w-full h-64 object-cover"
             />

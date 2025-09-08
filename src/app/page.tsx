@@ -10,6 +10,8 @@ import WhyWorkWithArifSection from "../components/WhyWorkWithArifSection/WhyWork
 import AreasCoveredSection from "../components/AreasCoveredSection/AreasCoveredSection";
 import FooterSection from "../components/Footer/page";
 import HomeValuationBanner from "../components/HomeWorth/page";
+import Testimonials from "@/components/Testimonials/page";
+import PortfolioGallery from "@/components/Portfolio/page";
 
 export default function Home() {
   return (
@@ -21,6 +23,8 @@ export default function Home() {
       <CallToJourneySection />
       <WhyWorkWithArifSection />
       <AreasCoveredSection />
+      <PortfolioGallery />
+      <Testimonials />
       <HomeValuationBanner />
       {/* <FooterSection /> */}
     </main>

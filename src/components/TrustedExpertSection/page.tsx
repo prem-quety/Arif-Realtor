@@ -7,7 +7,7 @@ export default function TrustedExpertSection() {
         {/* Left: Flexing Headshot */}
         <div>
           <img
-            src="/assets/images/mufti-banner.webp"
+            src="/assets/images/about.jpg"
             alt="A.Q. Mufti - Realtor"
             className="w-full rounded-xl object-cover border border-black/10 shadow-lg"
           />

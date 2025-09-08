@@ -17,18 +17,21 @@ export default function Nav() {
 
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8 font-medium text-gray-700">
+            <Link href="/" className="hover:text-gray-900 transition-colors">
+              Home
+            </Link>
             <Link
               href="/services"
               className="hover:text-gray-900 transition-colors"
             >
               Services
             </Link>
-            <a
+            {/* <a
               href="#listings"
               className="hover:text-gray-900 transition-colors"
             >
               Listings
-            </a>
+            </a> */}
             <Link
               href="/about"
               className="hover:text-gray-900 transition-colors"
@@ -42,7 +45,7 @@ export default function Nav() {
               Mortgage Calculator
             </Link>
             <a
-              href="#contact"
+              href="/contact"
               className="rounded-lg border border-gray-300 bg-white/70 px-5 py-2 hover:bg-white transition"
             >
               Contact

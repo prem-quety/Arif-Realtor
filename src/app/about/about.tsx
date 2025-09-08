@@ -25,12 +25,12 @@ export default function AboutTwoColumnSection() {
       }`}
     >
       {/* Left Image */}
-      <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-lg">
+      <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-lg">
         <Image
-          src="/assets/images/aq-reference.jpg"
+          src="/assets/images/arif.avif"
           alt="Arif Realtor"
           fill
-          className="object-cover object-center"
+          className="object-fill object-center"
         />
       </div>
 

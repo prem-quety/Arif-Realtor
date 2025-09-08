@@ -5,44 +5,44 @@ export default function WhyWorkWithArifSection() {
     <section className="max-w-7xl mx-auto py-24 px-6 grid md:grid-cols-2 gap-16 items-center">
       <div>
         <span className="uppercase text-sm text-accent font-semibold tracking-wide">
-          Why Work With A.Q. Mufti?
+          Why Work With Arif Realtor?
         </span>
         <h2 className="mt-4 text-4xl md:text-5xl font-serif font-medium text-heading leading-snug">
-          Discover What Makes A. Q. Mufti Stand Out As The Best Realtor In
-          Mississauga
+          Discover What Makes Arif Realtor Stand Out In The Luxury Real Estate
+          Market
         </h2>
 
         <p className="mt-8 text-muted text-[17px] leading-relaxed">
-          Choose A. Q. Mufti, a trusted real estate expert who understands your
-          goals. With expertise in residential, commercial, and agricultural
-          properties, he ensures a smooth experience. Whether you're exploring
-          Mississauga homes for sale or other real estate needs, Mufti offers
-          personalized service that guarantees success. Moreover, his in-depth
-          knowledge and negotiation skills make every transaction easier. In
-          addition, he’s dedicated to exceeding your expectations, every time.
+          Choose Arif Realtor, a trusted real estate professional who
+          understands your vision. With expertise in high-end residential and
+          investment properties, Arif ensures every client experiences a smooth
+          and rewarding journey. Whether you’re exploring luxury homes in
+          Mississauga or prime real estate across the GTA, Arif provides
+          personalized guidance designed to exceed expectations.
         </p>
 
         <p className="mt-6 text-muted text-[17px] leading-relaxed">
-          Known for his professionalism and integrity, A. Q. Mufti has earned
-          prestigious awards, including the Queen’s Diamond Jubilee Medal and
-          Mississauga Mayor’s Civic Service Award. These honors highlight his
-          commitment to both real estate and the community. With Mufti by your
-          side, you gain a trusted advisor who is committed to your success.
+          Known for his professionalism, integrity, and deep market knowledge,
+          Arif has built a reputation as a realtor who puts clients first. His
+          strong negotiation skills and attention to detail simplify every
+          transaction, while his dedication to excellence sets him apart. With
+          Arif by your side, you gain not just a realtor, but a trusted partner
+          committed to your success.
         </p>
       </div>
 
       <div className="w-full">
         <div className="rounded-xl overflow-hidden shadow-lg ring-1 ring-black/10">
           <img
-            src="/assets/images/arif.webp"
-            alt="A. Q. Mufti"
+            src="/assets/images/luxury-area.jpg"
+            alt="Arif Realtor"
             className="w-full object-cover"
           />
         </div>
         <div className="mt-4 flex justify-center">
           <img
             src="/assets/images/arif.webp"
-            alt="Mufti Real Estate Services Logo"
+            alt="Arif Realtor Logo"
             className="h-12"
           />
         </div>
