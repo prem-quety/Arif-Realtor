@@ -26,8 +26,8 @@ export default function WhyWorkWithArifSection() {
           Arif has built a reputation as a realtor who puts clients first. His
           strong negotiation skills and attention to detail simplify every
           transaction, while his dedication to excellence sets him apart. With
-          Arif by your side, you gain not just a realtor, but a trusted partner
-          committed to your success.
+          Arif by your side, you gain a realtor and a trusted partner committed
+          to your success.
         </p>
       </div>
 

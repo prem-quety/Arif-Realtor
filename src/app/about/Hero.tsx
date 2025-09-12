@@ -34,10 +34,10 @@ export default function AboutHero() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 opacity-0 animate-slide-up delay-[800ms]">
             <a
-              href="#listings"
+              href="/mortgage"
               className="rounded-xl bg-accent text-white px-6 py-3 shadow hover:bg-accent/90 transition-colors"
             >
-              Browse Listings
+              Mortgage Calculator
             </a>
             <a
               href="#services"

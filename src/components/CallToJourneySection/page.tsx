@@ -38,13 +38,13 @@ export default function CallToJourneySection() {
               Buying Home
             </h3>
             <p className="text-muted text-[16px] leading-relaxed">
-              Find your dream home with confidence, guided by AQ Mufti Realty.
-              We’re here for every step of your journey, turning your vision
-              into reality.
+              Find your dream home with confidence. Guided by our expertise,
+              we’re here for every step of your journey—turning your vision into
+              reality.
             </p>
             <div className="mt-6">
               <a
-                href="#"
+                href="/services"
                 className="inline-block bg-accent text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-[#b88429] transition"
               >
                 Search Homes
@@ -78,7 +78,7 @@ export default function CallToJourneySection() {
             </p>
             <div className="mt-6">
               <a
-                href="#"
+                href="/services"
                 className="inline-block bg-accent text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-[#b88429] transition"
               >
                 Sell with Us

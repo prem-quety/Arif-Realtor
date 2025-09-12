@@ -9,6 +9,7 @@ interface Service {
   desc: string;
   details: string;
   href: string;
+  bullets: string[];
 }
 
 export default function Services() {
@@ -18,50 +19,80 @@ export default function Services() {
     {
       key: "acquisition",
       title: "Concierge Acquisition",
-      desc: "Brief us once. We source, screen, and secure the right estate with private viewings and discreet representation.",
+      desc: "Entrust us once. We discreetly source, screen, and secure the ideal estate, with private viewings tailored exclusively to you.",
       details:
-        "From curated listings and private previews to airtight negotiation, we orchestrate the entire purchase with total confidentiality.",
+        "From curated previews to final negotiations, we deliver a seamless acquisition experience—defined by privacy, precision, and sophistication.",
       href: "#",
+      bullets: [
+        "Confidential representation with absolute discretion",
+        "Access to a refined network of trusted vendors",
+        "Streamlined process with transparent, timely reporting",
+      ],
     },
     {
       key: "private-sales",
       title: "Private Portfolio Sales",
-      desc: "Quiet listings, qualified buyers, zero noise. Precision pricing and negotiation under strict NDA.",
+      desc: "Discreet listings, qualified buyers, no noise. We deliver precision pricing and negotiation under the highest confidentiality.",
       details:
-        "We position your property to a vetted buyer network with cinematic media, controlled showings, and rigorous offer management.",
+        "Your property deserves a stage as refined as its value. We present it to a vetted buyer network with cinematic media, private showings, and seamless offer management.",
       href: "#",
+      bullets: [
+        "Confidential sales under strict NDA",
+        "Access to an exclusive pool of qualified buyers",
+        "Controlled process with expert negotiation",
+      ],
     },
     {
       key: "global-suite",
       title: "Global Marketing Suite",
-      desc: "Sotheby-grade creative: architectural film, twilight photography, print editorials, and worldwide syndication.",
+      desc: "Sotheby-grade storytelling through film, twilight photography, print features, and global syndication—crafted to captivate.",
       details:
-        "World-class brand assets and international distribution to ensure your home is seen in the right places by the right people.",
+        "We create world-class brand assets and deliver international exposure, ensuring your property is presented with cinematic impact to the right audience, everywhere.",
       href: "#",
+      bullets: [
+        "Architectural film and luxury photography",
+        "Editorial features and global distribution",
+        "Strategic placement with lasting visibility",
+      ],
     },
     {
       key: "off-market",
       title: "Discreet Off-Market Access",
-      desc: "Tap into our billion-dollar network for properties that never hit the public feed.",
+      desc: "Enter a private network where billion-dollar properties change hands quietly—never reaching the public market.",
       details:
-        "Priority access to private sellers and whisper listings, with compliance and discretion at every step.",
+        "Gain priority entry to private sellers and exclusive “whisper” listings, managed with strict discretion and full compliance at every step.",
       href: "#",
+      bullets: [
+        "Confidential access to rare properties",
+        "Priority introductions to private sellers",
+        "A secure process guided with discretion ",
+      ],
     },
     {
       key: "advisory",
       title: "Investment Advisory",
-      desc: "Institutional-style due diligence, yield modeling, and long-horizon portfolio strategy.",
+      desc: "Institutional-grade diligence, yield modeling, and bespoke portfolio strategies—crafted for long-term growth and security.",
       details:
-        "Data-driven analysis, underwriting, and asset planning tailored to your risk and return profile.",
+        "We provide data-driven analysis, underwriting, and tailored asset planning to align your portfolio with risk and reward.",
       href: "#",
+      bullets: [
+        "Rigorous due diligence and market insights",
+        "Customized strategies for sustained growth",
+        "Disciplined planning with transparent reporting ",
+      ],
     },
     {
       key: "relocation",
       title: "Relocation Concierge",
-      desc: "End-to-end move orchestration — schools, clubs, services, and turn-key settling-in.",
+      desc: "A seamless move, orchestrated end-to-end—from schools and clubs to services and turnkey settling-in.",
       details:
-        "A seamless transition with local orientation, introductions, and white-glove coordination for every detail.",
+        "We handle every detail of your transition with white-glove precision, from local orientation to elite introductions, ensuring a stress-free relocation experience.",
       href: "#",
+      bullets: [
+        "Personalized settling-in with curated services",
+        "Access to premium schools, clubs, and networks",
+        "Full coordination with discreet oversight",
+      ],
     },
   ];
 
@@ -147,7 +178,7 @@ export default function Services() {
         {/* CTA */}
         <div className="relative mt-24 flex justify-center">
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/90 px-10 py-4 text-base font-medium text-neutral-900 shadow-md backdrop-blur-md transition hover:border-[#d4af37] hover:text-[#7c6a2b] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
           >
             Request a private consultation
@@ -240,15 +271,17 @@ function ServiceModal({
               <p className="max-w-2xl text-neutral-700">{service.details}</p>
 
               <div className="mt-6 grid gap-3 text-sm text-neutral-700">
-                <div className="flex items-center gap-2">
-                  <Dot /> Confidential representation
-                </div>
-                <div className="flex items-center gap-2">
-                  <Dot /> Curated vendor network
-                </div>
-                <div className="flex items-center gap-2">
-                  <Dot /> Precise timelines & reporting
-                </div>
+                {service.bullets.map((b, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-center gap-2"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Dot /> {b}
+                  </motion.div>
+                ))}
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">

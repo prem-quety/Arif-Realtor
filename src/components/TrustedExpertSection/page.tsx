@@ -26,22 +26,22 @@ export default function TrustedExpertSection() {
           </h2>
 
           <p className="mt-6 text-muted text-[17px] leading-relaxed">
-            A. Q. Mufti is a distinguished real estate strategist specializing
-            in luxury assets across Mississauga, Oakville, and Niagara. Clients
-            don’t just trust him with properties — they trust him with
-            portfolios.
+            Our firm is a distinguished real estate advisory firm specializing
+            in luxury assets in Mississauga, Oakville, and Niagara. Clients
+            don’t simply rely on us for transactions—they entrust us with
+            building and protecting their portfolios.
           </p>
 
           <p className="mt-5 text-muted text-[17px] leading-relaxed">
-            Decorated with honors including the Queen’s Diamond Jubilee Medal
-            and the Mississauga Mayor’s Civic Service Award, Mufti operates in a
-            league where deals are discreet and square footage is measured in
-            prestige.
+            Recognized with honors such as the Queen’s Diamond Jubilee Medal and
+            the Mississauga Mayor’s Civic Service Award, we operate in a league
+            where negotiations are discreet, and every square foot is measured
+            in prestige.
           </p>
 
           <div className="mt-8">
             <a
-              href="#"
+              href="/about"
               className="inline-block rounded-md bg-accent text-white px-6 py-3 font-medium shadow-md hover:shadow-lg hover:bg-[#b88429] transition"
             >
               Read More
