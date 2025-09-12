@@ -75,7 +75,7 @@ export default function AreasCoveredSection() {
     tap: prefersReduce ? {} : { scale: 0.995, transition: { duration: 0.1 } },
   };
 
-  const slug = (s) =>
+  const slug = (s: string) =>
     s
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")

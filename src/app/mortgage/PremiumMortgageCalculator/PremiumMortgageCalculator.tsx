@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import MortgageHero from "../Hero/page";
+import MortgageHero from "../Hero/MortgageHero";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 /**
