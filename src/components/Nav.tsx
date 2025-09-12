@@ -14,7 +14,6 @@ export default function Nav() {
               className="h-8 w-auto object-contain"
             />
           </div>
-
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8 font-medium text-gray-700">
             <Link href="/" className="hover:text-gray-900 transition-colors">
