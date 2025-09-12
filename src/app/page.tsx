@@ -16,7 +16,6 @@ import PortfolioGallery from "@/components/Portfolio/page";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      {/* <Nav /> */}
       <Hero />
       <Services />
       <TrustedExpertSection />
@@ -26,7 +25,6 @@ export default function Home() {
       <PortfolioGallery />
       <Testimonials />
       <HomeValuationBanner />
-      {/* <FooterSection /> */}
     </main>
   );
 }
