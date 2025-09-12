@@ -59,7 +59,7 @@ export default function AreasCoveredSection() {
     },
     {
       name: "Pickering",
-      image: "/assets/images/Pickering.jpg",
+      image: "/assets/images/Pickering.avif",
       blurb: "Waterfront boardwalks and calm, well-kept streets.",
     },
   ];

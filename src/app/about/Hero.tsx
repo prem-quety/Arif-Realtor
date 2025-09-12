@@ -40,7 +40,7 @@ export default function AboutHero() {
               Mortgage Calculator
             </a>
             <a
-              href="#services"
+              href="/services"
               className="rounded-xl border border-white/30 text-white px-6 py-3 hover:bg-white/10 transition-colors"
             >
               Our Services

@@ -58,7 +58,7 @@ export default function Hero() {
               Mortgage Calculator
             </a>
             <a
-              href="#services"
+              href="/services"
               className="rounded-xl border border-white/40 px-6 py-3 hover:bg-white/10"
             >
               Our Services

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import {
   Facebook,
   Instagram,
@@ -9,8 +10,22 @@ import {
   MapPin,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubscribed(true);
+  };
+
+  useEffect(() => {
+    if (!subscribed) return;
+    const timer = setTimeout(() => setSubscribed(false), 4000);
+    return () => clearTimeout(timer);
+  }, [subscribed]);
+
   return (
     <footer className="bg-background border-t border-gray-200 text-muted text-sm">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -24,7 +39,7 @@ export default function Footer() {
           <p className="text-heading font-serif text-xl mb-2">
             Subscribe To Our Newsletter
           </p>
-          <form className="space-y-3">
+          <form onSubmit={handleSubmit} className="space-y-3">
             <input
               type="text"
               placeholder="Full Name"
@@ -41,6 +56,11 @@ export default function Footer() {
             >
               Subscribe
             </button>
+            {subscribed && (
+              <p className="text-green-600 text-sm font-medium">
+                You have subscribed successfully!
+              </p>
+            )}
           </form>
         </div>
 
@@ -49,29 +69,29 @@ export default function Footer() {
           <p className="text-heading font-medium mb-4">Navigation</p>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:text-heading">
+              <Link href="/" className="hover:text-heading">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/buyers" className="hover:text-heading">
-                Buyers
-              </a>
+              <Link href="/services" className="hover:text-heading">
+                Services
+              </Link>
             </li>
             <li>
-              <a href="/sellers" className="hover:text-heading">
-                Sellers
-              </a>
-            </li>
-            <li>
-              <a href="/about" className="hover:text-heading">
+              <Link href="/about" className="hover:text-heading">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-heading">
+              <Link href="/mortgage" className="hover:text-heading">
+                Mortgage Calculator
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-heading">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

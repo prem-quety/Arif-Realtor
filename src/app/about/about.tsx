@@ -56,7 +56,7 @@ export default function AboutTwoColumnSection() {
           our mission is to build lasting relationships—not just close deals.
         </p>
         <Link
-          href="#contact"
+          href="/contact"
           className="inline-block rounded-xl bg-accent text-white px-6 py-3 shadow hover:bg-accent/90 transition-colors"
         >
           Contact Us

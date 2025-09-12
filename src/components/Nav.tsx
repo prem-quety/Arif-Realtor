@@ -8,11 +8,13 @@ export default function Nav() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img
-              src="/assets/images/arif.webp"
-              alt="Arif Realtor Logo"
-              className="h-8 w-auto object-contain"
-            />
+            <Link href="/" className="inline-block">
+              <img
+                src="/assets/images/arif.webp"
+                alt="Arif Realtor Logo"
+                className="h-8 w-auto object-contain"
+              />
+            </Link>
           </div>
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8 font-medium text-gray-700">

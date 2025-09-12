@@ -72,9 +72,10 @@ export default function CallToJourneySection() {
               Selling Home
             </h3>
             <p className="text-muted text-[16px] leading-relaxed">
-              Selling with AQ Mufti Realty means a journey of hope and
-              opportunity. We’ll showcase your property’s potential, navigate
-              the market, and empower you for your next adventure.
+              Selling your home is more than a transaction—it’s a journey of
+              opportunity. We showcase your property’s full potential, navigate
+              the market with expertise, and empower you to step confidently
+              into your next chapter.
             </p>
             <div className="mt-6">
               <a
