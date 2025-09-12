@@ -18,48 +18,48 @@ export default function AreasCoveredSection() {
   const areas: Area[] = [
     {
       name: "Mississauga",
-      image: "/assets/images/mississauga.jpg",
+      image: "/assets/images/Mississauga.jpg",
       blurb: "Lakeside living, vibrant squares, and calm suburban pockets.",
     },
     {
       name: "Oakville",
-      image: "/assets/images/oakville.jpg",
+      image: "/assets/images/Oakville.jpg",
       blurb: "Tree-lined streets, harbours, and stately neighbourhoods.",
     },
     {
       name: "Milton",
-      image: "/assets/images/milton.jpg",
+      image: "/assets/images/Milton.jpg",
       blurb: "Family-first communities with quick access to escarpment trails.",
     },
     {
       name: "Waterloo",
-      image: "/assets/images/waterloo.webp",
+      image: "/assets/images/Waterloo.webp",
       blurb: "Campus energy meets refined residential streets and tech hubs.",
     },
     {
       name: "Ajax",
-      image: "/assets/images/ajax.jpg",
+      image: "/assets/images/Ajax.jpg",
       blurb: "Quiet waterfronts, parks, and easy commuter links.",
     },
     {
       name: "Toronto",
-      image: "/assets/images/toronto.webp",
+      image: "/assets/images/Toronto.webp",
       blurb:
         "Iconic skyline, distinct neighbourhoods, culture on every corner.",
     },
     {
       name: "Oshawa",
-      image: "/assets/images/oshawa.webp",
+      image: "/assets/images/Oshawa.webp",
       blurb: "Historic cores balanced with new, modern communities.",
     },
     {
       name: "Niagara Falls",
-      image: "/assets/images/niagara.jpg",
+      image: "/assets/images/Niagara.jpg",
       blurb: "Wine country charm and scenic riverside living.",
     },
     {
       name: "Pickering",
-      image: "/assets/images/pickering.jpg",
+      image: "/assets/images/Pickering.jpg",
       blurb: "Waterfront boardwalks and calm, well-kept streets.",
     },
   ];
