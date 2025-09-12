@@ -38,7 +38,7 @@ export default function AreasCoveredSection() {
     },
     {
       name: "Ajax",
-      image: "/assets/images/Ajax.jpg",
+      image: "/assets/images/AJAX.jpg",
       blurb: "Quiet waterfronts, parks, and easy commuter links.",
     },
     {
