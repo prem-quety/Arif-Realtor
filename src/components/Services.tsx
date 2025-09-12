@@ -3,10 +3,18 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Services() {
-  const [selected, setSelected] = useState(null);
+interface Service {
+  key: string;
+  title: string;
+  desc: string;
+  details: string;
+  href: string;
+}
 
-  const items = [
+export default function Services() {
+  const [selected, setSelected] = useState<Service | null>(null);
+
+  const items: Service[] = [
     {
       key: "acquisition",
       title: "Concierge Acquisition",
@@ -26,15 +34,15 @@ export default function Services() {
     {
       key: "global-suite",
       title: "Global Marketing Suite",
-      desc: "Sotheby‑grade creative: architectural film, twilight photography, print editorials, and worldwide syndication.",
+      desc: "Sotheby-grade creative: architectural film, twilight photography, print editorials, and worldwide syndication.",
       details:
-        "World‑class brand assets and international distribution to ensure your home is seen in the right places by the right people.",
+        "World-class brand assets and international distribution to ensure your home is seen in the right places by the right people.",
       href: "#",
     },
     {
       key: "off-market",
-      title: "Discreet Off‑Market Access",
-      desc: "Tap into our billion‑dollar network for properties that never hit the public feed.",
+      title: "Discreet Off-Market Access",
+      desc: "Tap into our billion-dollar network for properties that never hit the public feed.",
       details:
         "Priority access to private sellers and whisper listings, with compliance and discretion at every step.",
       href: "#",
@@ -42,17 +50,17 @@ export default function Services() {
     {
       key: "advisory",
       title: "Investment Advisory",
-      desc: "Institutional‑style due diligence, yield modeling, and long‑horizon portfolio strategy.",
+      desc: "Institutional-style due diligence, yield modeling, and long-horizon portfolio strategy.",
       details:
-        "Data‑driven analysis, underwriting, and asset planning tailored to your risk and return profile.",
+        "Data-driven analysis, underwriting, and asset planning tailored to your risk and return profile.",
       href: "#",
     },
     {
       key: "relocation",
       title: "Relocation Concierge",
-      desc: "End‑to‑end move orchestration — schools, clubs, services, and turn‑key settling‑in.",
+      desc: "End-to-end move orchestration — schools, clubs, services, and turn-key settling-in.",
       details:
-        "A seamless transition with local orientation, introductions, and white‑glove coordination for every detail.",
+        "A seamless transition with local orientation, introductions, and white-glove coordination for every detail.",
       href: "#",
     },
   ];
@@ -82,7 +90,7 @@ export default function Services() {
             The Premium Real Estate Collection
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-neutral-700">
-            Minimal, discreet, and outcomes‑obsessed. Designed for clients who
+            Minimal, discreet, and outcomes-obsessed. Designed for clients who
             value time, privacy, and precision.
           </p>
           <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
@@ -93,7 +101,7 @@ export default function Services() {
           {items.map((s, i) => (
             <motion.button
               type="button"
-              key={s.title}
+              key={s.key}
               onClick={() => setSelected(s)}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -163,12 +171,18 @@ export default function Services() {
   );
 }
 
-function ServiceModal({ service, onClose }) {
-  const closeRef = useRef(null);
+function ServiceModal({
+  service,
+  onClose,
+}: {
+  service: Service | null;
+  onClose: () => void;
+}) {
+  const closeRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     if (!service) return;
-    const onKey = (e) => e.key === "Escape" && onClose();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
     const t = setTimeout(() => closeRef.current?.focus(), 10);
     return () => {

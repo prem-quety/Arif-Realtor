@@ -5,11 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
+interface Area {
+  name: string;
+  image: string;
+  blurb: string;
+}
+
 export default function AreasCoveredSection() {
   const prefersReduce = useReducedMotion();
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<Area | null>(null);
 
-  const areas = [
+  const areas: Area[] = [
     {
       name: "Mississauga",
       image: "/assets/images/mississauga.jpg",
@@ -18,12 +24,12 @@ export default function AreasCoveredSection() {
     {
       name: "Oakville",
       image: "/assets/images/oakville.jpg",
-      blurb: "Tree‑lined streets, harbours, and stately neighbourhoods.",
+      blurb: "Tree-lined streets, harbours, and stately neighbourhoods.",
     },
     {
       name: "Milton",
       image: "/assets/images/milton.jpg",
-      blurb: "Family‑first communities with quick access to escarpment trails.",
+      blurb: "Family-first communities with quick access to escarpment trails.",
     },
     {
       name: "Waterloo",
@@ -54,7 +60,7 @@ export default function AreasCoveredSection() {
     {
       name: "Pickering",
       image: "/assets/images/pickering.jpg",
-      blurb: "Waterfront boardwalks and calm, well‑kept streets.",
+      blurb: "Waterfront boardwalks and calm, well-kept streets.",
     },
   ];
 
@@ -68,14 +74,7 @@ export default function AreasCoveredSection() {
     },
   };
 
-  const card = {
-    hidden: { opacity: 0, y: prefersReduce ? 0 : 12 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-    hover: prefersReduce ? {} : { scale: 1.01, transition: { duration: 0.25 } },
-    tap: prefersReduce ? {} : { scale: 0.995, transition: { duration: 0.1 } },
-  };
-
-  const slug = (s) =>
+  const slug = (s: string) =>
     s
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
@@ -113,7 +112,7 @@ export default function AreasCoveredSection() {
           </h2>
           <div className="mx-auto mt-6 h-px w-28 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
           <p className="mx-auto mt-4 max-w-xl text-neutral-600">
-            Minimal, high‑end browsing for serious buyers. Tap a card to open a
+            Minimal, high-end browsing for serious buyers. Tap a card to open a
             clean, focused overview.
           </p>
         </motion.header>
@@ -144,7 +143,7 @@ export default function AreasCoveredSection() {
   );
 }
 
-function AreaCard({ area, onOpen }) {
+function AreaCard({ area, onOpen }: { area: Area; onOpen: () => void }) {
   const { name, image } = area;
   return (
     <motion.button
@@ -183,12 +182,20 @@ function AreaCard({ area, onOpen }) {
   );
 }
 
-function LocationModal({ area, onClose, slug }) {
-  const closeRef = useRef(null);
+function LocationModal({
+  area,
+  onClose,
+  slug,
+}: {
+  area: Area | null;
+  onClose: () => void;
+  slug: (s: string) => string;
+}) {
+  const closeRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     if (!area) return;
-    const onKey = (e) => {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     document.addEventListener("keydown", onKey);
@@ -278,7 +285,7 @@ function LocationModal({ area, onClose, slug }) {
   );
 }
 
-function Chevron(props) {
+function Chevron(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
