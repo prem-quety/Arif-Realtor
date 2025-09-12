@@ -14,9 +14,9 @@ export default function WhyWorkWithArifSection() {
 
         <p className="mt-8 text-muted text-[17px] leading-relaxed">
           Choose Arif Realtor, a trusted real estate professional who
-          understands your vision. With expertise in high-end residential and
-          investment properties, Arif ensures every client experiences a smooth
-          and rewarding journey. Whether you’re exploring luxury homes in
+          understands your vision. Arif's expertise in high-end residential and
+          investment properties ensures every client experiences a smooth and
+          rewarding journey. Whether you’re exploring luxury homes in
           Mississauga or prime real estate across the GTA, Arif provides
           personalized guidance designed to exceed expectations.
         </p>

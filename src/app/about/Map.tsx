@@ -13,9 +13,9 @@ export default function MapSection() {
           </h2>
           <p className="text-muted text-lg leading-relaxed mb-6">
             Based in the vibrant city of Mississauga, Arif Realtor serves the
-            entire GTA with unmatched precision and loyalty. Whether you're
-            looking for your first home or a luxurious estate, our doors are
-            always open.
+            entire GTA with unmatched precision and loyalty. Our doors are
+            always open, whether you're looking for your first home or a
+            luxurious estate.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">

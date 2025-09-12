@@ -45,9 +45,11 @@ export default function AboutTwoColumnSection() {
         <p className="text-muted mb-5 leading-relaxed">
           Arif Realtor is a trusted real estate service based in the Greater
           Toronto Area, known for delivering results with integrity and
-          professionalism. Whether you're buying a home, leasing commercial
-          space, or investing in agricultural property, Arif Realtor provides
-          personalized strategies tailored to your goals.
+          professionalism. Whether buying a home, leasing commercial space, or
+          investing in agricultural property, Arif Realtor provides personalized
+          strategies tailored to your goals. With deep roots in Mississauga and
+          a legacy that spans generations, our mission is to build lasting
+          relationships—not just close deals.
         </p>
         <p className="text-muted mb-8 leading-relaxed">
           With deep roots in Mississauga and a legacy that spans generations,
