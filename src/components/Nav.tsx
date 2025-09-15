@@ -39,11 +39,18 @@ export default function Nav() {
               About
             </Link>
             <Link
+              href="/listing"
+              className="hover:text-gray-900 transition-colors"
+            >
+              My Listing
+            </Link>
+            <Link
               href="/mortgage"
               className="hover:text-gray-900 transition-colors"
             >
               Mortgage Calculator
             </Link>
+
             <a
               href="/contact"
               className="rounded-lg border border-gray-300 bg-white/70 px-5 py-2 hover:bg-white transition"
