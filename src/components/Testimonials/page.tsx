@@ -5,33 +5,34 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Nadia Minetto",
-    date: "18-01-2021",
+    name: "Samantha Patel",
+    date: "12-03-2023",
     statement:
-      "Mr. Rajer was the agent for the home we rented in December 2020. Arif was extremely helpful, open, transparent, and reliable through the whole process, he really cared about us, understood our needs, and fought hard for us as we were in a difficult situation. From the very first time I spoke to him, he was very reassuring and professional, making it very comforting to work with him and trust him. I highly recommend him to anyone looking to either rent or buy a home.",
+      "Arif made renting our condo stress-free. Clear communication, fast paperwork, and he even checked in after move-in. Highly professional.",
   },
   {
-    name: "Arvind Nair & Resmi Nair",
-    date: "29-06-2022",
+    name: "Jason & Emily Wright",
+    date: "05-09-2023",
     statement:
-      "I was referred to Arif by a friend. He carefully listened to my requirements, shared only relevant listings, and scheduled visits around my work schedule. The second property we saw perfectly matched my and my spouse's expectations. Arif professionally managed all formalities, facilitated seamless communication with the landlord, and even attended the key handover personally. His polite and professional demeanor stood out throughout the process. We highly recommend Arif and look forward to working with him again for future real estate needs. Thank you!",
+      "We were nervous first-time buyers, but Arif guided us step by step. He was honest about pricing, patient during visits, and got us our dream home under budget.",
   },
   {
-    name: "Darren Griffiths",
-    date: "13-09-2022",
+    name: "Mark D’Souza",
+    date: "22-01-2024",
     statement:
-      "I was in the market for a rental home and had the pleasure of meeting Arif Rajer who was the listing agent. Arif was extremely accommodating and negotiated with the homeowner on my behalf which resulted in favorable lease terms. Customer service was both prompt and professional. I couldn't have asked for a better experience.",
+      "Smoothest leasing process I’ve ever experienced. Arif handled everything with speed and accuracy. Felt like a true partner throughout.",
   },
   {
-    name: "Ashfaq Mohammed",
+    name: "Olivia Chen",
+    date: "14-05-2024",
     statement:
-      "Mr. Arif Rajer is truly phenomenal—professional, respectful, and always available. He responds promptly, respects client preferences, and provides insightful recommendations backed by detailed analysis. In early 2022, I was ready to buy my first home, but he advised me to wait, predicting a market drop by June. His insight proved accurate, and I saved significantly by purchasing then. Arif went above and beyond, even traveling multiple times between Cambridge and Kingston to help me find my dream home. Thanks to his dedication, I bought a wonderful property in a prime location. I’m deeply grateful and highly recommend Mr. Arif Rajer for all your real estate needs.",
+      "What stood out was Arif’s market insight. He advised me to wait a month before listing—his timing was spot-on and I closed above asking.",
   },
   {
-    name: "Shariq",
-    date: "14-07-2022",
+    name: "Ravi Sharma",
+    date: "02-11-2024",
     statement:
-      "Thank you for your help and support in purchasing and renting my property. You made the process seamless by providing detailed explanations, guiding me step by step, and assisting with essential tasks like connecting with a lawyer. Your professionalism and dedication were evident throughout. I wouldn’t hesitate to recommend you to anyone seeking honest and reliable real estate assistance. Thank you again.",
+      "Arif was always available, from late-night calls to early morning showings. A rare mix of professionalism and genuine care.",
   },
 ];
 
