@@ -52,13 +52,13 @@ export default function WhyChooseUs() {
           <div className="w-full space-y-10">
             <Feature
               icon={<PiggyBank size={24} />}
-              title="No Downpayment"
-              desc="Start strong with zero up front. We’ll get you home without burning your wallet."
+              title="Smart Financing"
+              desc="Flexible options designed to fit your lifestyle — without hidden traps."
             />
             <Feature
               icon={<Wallet size={24} />}
-              title="All Cash Offer"
-              desc="Cut through red tape. We deal in power moves — all cash, no questions."
+              title="Strong Offer Support"
+              desc="We back you with strategies that keep your bids competitive and stress-free."
             />
             <Feature
               icon={<FileText size={24} />}
