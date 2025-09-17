@@ -39,10 +39,10 @@ export default function Nav() {
               About
             </Link>
             <Link
-              href="/listing"
+              href="/mylistings"
               className="hover:text-gray-900 transition-colors"
             >
-              My Listing
+              My Listings
             </Link>
             <Link
               href="/mortgage"

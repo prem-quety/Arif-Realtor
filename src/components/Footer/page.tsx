@@ -70,6 +70,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/mylistings" className="hover:text-heading">
+                My Listings
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-heading">
                 Contact
               </Link>
@@ -152,7 +157,18 @@ export default function Footer() {
 
       <div className="border-t border-gray-200 text-center text-xs py-6 text-muted">
         © {new Date().getFullYear()} Arif Rajer — Cityscape Real Estate Ltd.,
-        Brokerage. All rights reserved.
+        Brokerage. All rights reserved. <br />
+        <span>
+          Powered by{" "}
+          <a
+            href="https://querytel.com"
+            className="text-accent hover:underline hover:opacity-90"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            QueryTel Inc
+          </a>
+        </span>
       </div>
     </footer>
   );

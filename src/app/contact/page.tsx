@@ -83,7 +83,7 @@ export default function ContactPage() {
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
               <Field label="Full name" name="name" required />
               <Field label="Email" name="email" type="email" required />
-              <Field label="Phone (optional)" name="phone" />
+              <Field label="Phone (optional)" name="phone" required />
               {/* Honeypot */}
               <input
                 name="company"
