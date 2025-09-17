@@ -37,31 +37,12 @@ export default function Footer() {
             className="h-10 mb-4"
           />
           <p className="text-heading font-serif text-xl mb-2">
-            Subscribe To Our Newsletter
+            Your Home. Your Future.
           </p>
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent"
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent"
-            />
-            <button
-              type="submit"
-              className="inline-block bg-accent text-white px-4 py-2 rounded-md font-medium hover:bg-[#a3792f] transition"
-            >
-              Subscribe
-            </button>
-            {subscribed && (
-              <p className="text-green-600 text-sm font-medium">
-                You have subscribed successfully!
-              </p>
-            )}
-          </form>
+          <p className="text-muted text-sm leading-relaxed">
+            Guiding you through every step of the real estate journey with
+            integrity, expertise, and personalized service.
+          </p>
         </div>
 
         {/* Navigation */}

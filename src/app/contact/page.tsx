@@ -21,11 +21,11 @@ export default function ContactPage() {
     const data = new FormData(form);
     setLoading(true);
     try {
-      const r = await fetch("https://formspree.io/f/REPLACE_WITH_YOUR_ID", {
+      const r = await fetch("/api/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
         body: data,
       });
+
       setStatus(r.ok ? "ok" : "err");
       if (r.ok) form.reset();
     } catch {
@@ -140,31 +140,39 @@ export default function ContactPage() {
                 <span className="text-muted">Email</span>
                 <br />
                 <a
-                  href="mailto:info@arifrealtor.com"
+                  href="mailto:arif.realtor1@gmail.com"
                   className="inline-block underline decoration-accent/70 underline-offset-4 text-heading hover:opacity-90"
                 >
-                  info@arifrealtor.com
+                  arif.realtor1@gmail.com
                 </a>
               </p>
               <p>
                 <span className="text-muted">Phone</span>
                 <br />
                 <a
-                  href="tel:+19050000000"
+                  href="tel:+16479161000"
                   className="text-heading hover:opacity-90"
                 >
-                  +1 (905) 000-0000
+                  (647) 916-1000
+                </a>
+                <br />
+                <a
+                  href="tel:+19059973632"
+                  className="text-heading hover:opacity-90"
+                >
+                  (905) 997-3632
                 </a>
               </p>
+
               <p>
                 <span className="text-muted">Office</span>
                 <br />
-                Mississauga, ON
+                885 Plymouth Dr Unit 2, Mississauga, ON. L5V 0B5
               </p>
             </div>
             <div className="mt-6 h-px w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
             <p className="mt-6 text-sm text-muted">
-              Hours: Mon–Sat, 9am–7pm. Same-day response.
+              Hours: Mon–Sat, 9am–6pm. Same-day response.
             </p>
           </motion.aside>
         </div>
