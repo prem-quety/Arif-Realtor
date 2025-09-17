@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "onboarding@resend.dev", // verified sender
-      to: "prem.kumar@querytel.com", // your inbox
+      to: "arif.realtor1@gmail.com", // your inbox
       subject: `New Inquiry from ${name}`,
       text: `
 New contact form submission
