@@ -36,6 +36,12 @@ export default function Footer() {
             alt="Arif Realtor Logo"
             className="h-10 mb-4"
           />
+          <img
+            src="/assets/images/cityscape.png"
+            alt="Cityscape Real Estate Logo"
+            className="w-1/2 h-auto mb-4 mx-10"
+          />
+
           <p className="text-heading font-serif text-xl mb-2">
             Your Home. Your Future.
           </p>

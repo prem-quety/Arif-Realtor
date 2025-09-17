@@ -74,16 +74,16 @@ export default function Hero() {
           {/* trust badges */}
           <div className="mt-10 grid grid-cols-3 gap-4 text-left text-sm text-white/80">
             <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
-              <div className="text-2xl font-bold">250+</div>
-              Verified Listings
+              <div className="text-2xl font-bold">50+</div>
+              Homes Sold This Year
             </div>
             <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
-              <div className="text-2xl font-bold">98%</div>
+              <div className="text-2xl font-bold">99%</div>
               Client Satisfaction
             </div>
             <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
-              <div className="text-2xl font-bold">24/7</div>
-              Dedicated Support
+              <div className="text-2xl font-bold">Top 1%</div>
+              GTA Realtors Ranked
             </div>
           </div>
         </div>
