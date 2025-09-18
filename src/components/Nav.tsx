@@ -100,6 +100,13 @@ export default function Nav() {
             >
               Mortgage Calculator
             </Link>
+            <Link
+              href="/mylistings"
+              className="hover:text-gray-900 transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              My Listings
+            </Link>
             <a
               href="/contact"
               className="rounded-lg border border-gray-300 bg-white/70 px-5 py-2 hover:bg-white transition text-center"
