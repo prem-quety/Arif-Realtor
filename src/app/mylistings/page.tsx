@@ -14,26 +14,29 @@ const listings = [
     size: "2000–2500 sqft",
     image: "/assets/images/GetMedia (0).jpeg",
     mls: "W12362328",
+    link: "/listing",
   },
   {
-    id: "1",
-    address: "3386 Gumwood Road, Mississauga, ON",
-    price: "$4,500/mo",
-    beds: "4+2",
-    baths: "5",
+    id: "2",
+    address: "28 Celano Drive, Hamilton, ON",
+    price: "$1,564,998",
+    beds: "4+1",
+    baths: "4",
     size: "2000–2500 sqft",
-    image: "/assets/images/GetMedia (0).jpeg",
-    mls: "W12362328",
+    image: "/assets/images/second/GetMedia (0).jfif",
+    mls: "X12518322",
+    link: "/listing-two",
   },
   {
-    id: "1",
-    address: "3386 Gumwood Road, Mississauga, ON",
-    price: "$4,500/mo",
-    beds: "4+2",
-    baths: "5",
-    size: "2000–2500 sqft",
-    image: "/assets/images/GetMedia (0).jpeg",
-    mls: "W12362328",
+    id: "3",
+    address: "2433 Dufferin Street #509, Toronto, ON",
+    price: "$2,590/mo",
+    beds: "2",
+    baths: "2",
+    size: "900–999 sqft",
+    image: "/assets/images/GetMediaTwo (0).jfif",
+    mls: "W12510430",
+    link: "/listing-three",
   },
 ];
 
@@ -52,17 +55,18 @@ export default function ListingsPage() {
           {listings.map((listing, i) => (
             <motion.div
               key={listing.id}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl bg-white shadow-[0_8px_40px_rgba(0,0,0,0.06)] ring-1 ring-black/10 overflow-hidden group hover:shadow-[0_12px_50px_rgba(0,0,0,0.12)] transition"
+              className="rounded-2xl bg-white shadow-[0_8px_40px_rgba(0,0,0,0.06)] ring-1 ring-black/10 overflow-hidden group hover:shadow-[0_12px_50px_rgba(0,0,0,0.12)] transition-all"
             >
-              <div className="relative h-56 w-full overflow-hidden">
-                <Link href={`/listing`}>
+              {/* IMAGE */}
+              <div className="relative h-60 w-full overflow-hidden">
+                <Link href={listing.link}>
                   <img
                     src={listing.image}
                     alt={listing.address}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 cursor-pointer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
                   />
                 </Link>
                 <span className="absolute top-3 left-3 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
@@ -70,16 +74,20 @@ export default function ListingsPage() {
                 </span>
               </div>
 
+              {/* INFO */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold">{listing.price}</h3>
-                <p className="text-muted mt-1">{listing.address}</p>
-                <div className="mt-4 flex items-center gap-6 text-sm text-muted">
+                <p className="text-muted mt-1 leading-snug">
+                  {listing.address}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted">
                   <span>🛏 {listing.beds} Beds</span>
                   <span>🛁 {listing.baths} Baths</span>
                   <span>📐 {listing.size}</span>
                 </div>
+
                 <Link
-                  href={`/listing`}
+                  href={listing.link}
                   className="inline-block mt-6 rounded-md bg-accent px-5 py-2 text-white font-medium shadow hover:brightness-110 transition"
                 >
                   View Details
