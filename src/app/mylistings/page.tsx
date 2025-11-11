@@ -6,17 +6,6 @@ import { motion } from "framer-motion";
 // mock data – replace with DB or API later
 const listings = [
   {
-    id: "1",
-    address: "3386 Gumwood Road, Mississauga, ON",
-    price: "$4,500/mo",
-    beds: "4+2",
-    baths: "5",
-    size: "2000–2500 sqft",
-    image: "/assets/images/GetMedia (0).jpeg",
-    mls: "W12362328",
-    link: "/listing",
-  },
-  {
     id: "2",
     address: "28 Celano Drive, Hamilton, ON",
     price: "$1,564,998",
