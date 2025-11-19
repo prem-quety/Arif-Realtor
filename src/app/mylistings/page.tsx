@@ -27,6 +27,17 @@ const listings = [
     mls: "W12510430",
     link: "/listing-three",
   },
+  {
+    id: "4",
+    address: "3092 Mavis Road #45, Mississauga, ON",
+    price: "$1,429,418",
+    beds: "N/A",
+    baths: "N/A",
+    size: "1,361 sqft",
+    image: "/assets/images/third/GetMediaFour (1).jfif",
+    mls: "W12554602",
+    link: "/listing-four",
+  },
 ];
 
 export default function ListingsPage() {
